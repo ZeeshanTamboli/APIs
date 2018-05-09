@@ -1,28 +1,22 @@
 const integers = [1, 2, 3, 4, 5, 6];
 
+function validateInput(a, b) {
+  const validate =
+    typeof a === 'number' && typeof b === 'number' && !isNaN(a) && !isNaN(b);
+  return validate;
+}
+
 module.exports = {
-  addition(a, b) {
-    return new Promise((resolve, reject) => {
-      if (
-        typeof a === 'number' &&
-        typeof b === 'number' &&
-        !isNaN(a) &&
-        !isNaN(b)
-      ) {
-        resolve(`Addition of two numbers is ${a + b}`);
-      } else {
-        reject('Both Parameters should be numbers');
-      }
-    });
+  async addition(a, b) {
+    if (validateInput(a, b)) {
+      return `Addition of two numbers is ${a + b}`;
+    } else {
+      return 'Both Parameters should be numbers';
+    }
   },
   subtraction(a, b) {
     return new Promise((resolve, reject) => {
-      if (
-        typeof a === 'number' &&
-        typeof b === 'number' &&
-        !isNaN(a) &&
-        !isNaN(b)
-      ) {
+      if (validateInput(a, b)) {
         resolve(`Subtraction of two numbers is ${a - b}`);
       } else {
         reject('Both Parameters should be numbers');
@@ -31,12 +25,7 @@ module.exports = {
   },
   multiplication(a, b) {
     return new Promise((resolve, reject) => {
-      if (
-        typeof a === 'number' &&
-        typeof b === 'number' &&
-        !isNaN(a) &&
-        !isNaN(b)
-      ) {
+      if (validateInput(a, b)) {
         resolve(`Multiplication of two numbers is ${a * b}`);
       } else {
         reject('Both Parameters should be numbers');
@@ -45,12 +34,7 @@ module.exports = {
   },
   division(a, b) {
     return new Promise((resolve, reject) => {
-      if (
-        typeof a === 'number' &&
-        typeof b === 'number' &&
-        !isNaN(a) &&
-        !isNaN(b)
-      ) {
+      if (validateInput(a, b)) {
         resolve(`Division of two numbers is ${a / b}`);
       } else {
         reject('Both Parameters should be numbers');

@@ -8,7 +8,7 @@ const {
   multiplication,
   division,
   square
-} = require('./mathFunctions');
+} = require('./mathFunctionsWithPromises');
 
 //Hello World GET API
 app.get('/learn/hellopost', (req, res) => {
